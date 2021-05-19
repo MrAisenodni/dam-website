@@ -1,21 +1,34 @@
 <?php
 	include 'koneksi.php';
-	
+
 	if(isset($_GET['id'])) {
 		$id = $_GET['id'];
-		$query = "SELECT * FROM subkriteria";
+		$query = "SELECT * FROM subkriteria WHERE id_kriteria = '$id'";
 		$result = mysqli_query($koneksi, $query);
-
+		
 		if(!$result) {
-			die("Query error : ".mysqli_errno($koneksi))." - ".mysqli_error($koneksi);
+			die("Query Error : ".mysqli_errno($koneksi)." - ".mysqli_error($koneksi));
 		}
+
+		$data = mysqli_fetch_assoc($result);
+
+		if(!count($data)) {
+			echo "<script>alert('Data Tidak Ditemukan!');window.location='admin.php?page=kriteria'</script>";
+		}
+	} else {
+		echo "<script>alert('Masukkan Kode yang ingin di edit');window.location='admin.php?page=kriteria'</script>";
+	}
 ?>
 <br><br><br>
-<div id="subkriteria">
-	<h1>Sub Kriteria</h1>
+<div class="detail_kriteria">
+	<h1><?php echo $data['nama_kriteria'] ?></h1>
 </div>
 
 <style type="text/css">
+	.detail_kriteria h1 {
+		color: grey;
+		text-align: center;
+	}
 	table {
 		border: 1px solid;
 		border-collapse: collapse;
@@ -58,13 +71,9 @@
 	}
 
 </style>
-<div class="tambah_subkriteria">
-	<a href="tambah_subkriteria.php">+ &nbsp; Tambah Subkriteria</a>
-</div>
 <table style="margin-left: 25%;">
 	<thead>
 		<tr>
-			<th>Nama Kriteria</th>
 			<th>Subkriteria</th>
 			<th>Bobot Subkriteria</th>
 		</tr>
@@ -73,16 +82,13 @@
 		<?php
 			$no = 1;
 
-			while ($row = mysqli_fetch_assoc($result)) {
+			while ($data = mysqli_fetch_assoc($result)) {
 		?>
 		<tr>
-			<td><?php echo $row['nama_kriteria'] ?></td>
-			<td><?php echo $row['nama_subkriteria'] ?></td>
-			<td><?php echo $row['bobot_subkriteria'] ?></td>
+			<td><?php echo $data['nama_subkriteria'] ?></td>
+			<td><?php echo $data['bobot_subkriteria'] ?></td>
 		</tr>
-		<?php
-			$no++;
-		}
-		?>
+		<?php $no++; } ?>
 	</tbody>
-</table>
+</table><br>
+<button><a href="admin.php?page=kriteria" style="text-decoration: none; color: white;">Kembali</a></button>

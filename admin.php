@@ -113,11 +113,7 @@
 	if ($page==""){
 		include "welcome.php";
 	}elseif ($page=="kriteria") {
-		if ($action=="") {
-			include "kriteria.php";
-		} elseif ($action=="tambah") {
-			include 'tambah_kriteria.php';
-		}
+		include "kriteria.php";
 	}elseif ($page=="siswa") {
 		include "siswa.php";
 	}elseif ($page=="ranking") {

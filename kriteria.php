@@ -45,13 +45,9 @@ include 'koneksi.php';
 	.action_kriteria a:hover {
 		background: #4594B8;
 		transition: 0.3s;
-		transition-property: background;
 	}
 
 </style>
-<div class="tambah_kriteria">
-	<a href="tambah_kriteria.php">+ &nbsp; Tambah Kriteria</a>
-</div>
 <table style="margin-left: 25%;">
 	<thead>
 		<tr>
@@ -59,6 +55,7 @@ include 'koneksi.php';
 			<th>Kode Kriteria</th>
 			<th>Nama Kriteria</th>
 			<th>Bobot Kriteria</th>
+			<th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -77,8 +74,13 @@ include 'koneksi.php';
 		<tr>
 			<td><?php echo $no; ?></td>
 			<td><?php echo $row['kd_kriteria'] ?></td>
-			<td><a href="?page=subkriteria&id=<?php echo $row['id_kriteria']; ?>"><?php echo $row['nama_kriteria'] ?></a></td>
+			<td><?php echo $row['nama_kriteria'] ?></td>
 			<td><?php echo $row['bobot_kriteria'] ?></td>
+			<td>
+				<div class="action_kriteria">
+					<a href="detail_kriteria.php?id=<?php echo $row['id_kriteria']; ?>">Detail</a>
+				</div>
+			</td>
 		</tr>
 		<?php
 			$no++;
