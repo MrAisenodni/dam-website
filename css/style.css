@@ -1,0 +1,257 @@
+body {
+	font-family: sans-serif;
+}
+
+/*halaman-login*/
+.login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgb(0, 0, 0, 0.5);
+	padding: 20px;
+	width: 270px;
+	box-shadow: 0 0 10px 5px black;
+
+}
+
+.avatar {
+	font-size: 50px;
+	background: #ecf0f1;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	position: fixed;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+}
+
+.login h2 {
+	text-align: center;
+	color: white;
+	padding-top: 30px;
+	margin-bottom: 5px;
+	letter-spacing: 5px;
+}
+
+.box-login {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	border-bottom: 2px solid white;
+	padding: 8px 0;
+}
+
+.box-login i {
+	font-size: 20px;
+	color: white;
+}
+
+.box-login input {
+	width: 100%;
+	padding: 0 10px;
+	background: none;
+	border: none;
+	outline: none;
+	color: white;
+	font-size: 18px;
+}
+
+.box-login input::placeholder {
+	color: white;
+}
+
+.btn-login {
+	width: 100%;
+	background: none;
+	padding: 10px;
+	border: 1px solid white;
+	font-size: 18px;
+	letter-spacing: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.btn-login:hover {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+/*halaman welcome.php*/
+.dashboard h1 {
+	border-bottom: 1px solid #7f8c8d;
+	font-size: 25px;
+	padding: 13px 0;
+	margin-left: 24%;
+	color: grey;
+}
+
+.container {
+	border: 1px solid;
+	margin-top: 10px;
+	background-color: #f9f9f9;
+	height: 60vh;
+	width: 100.4%;
+}
+
+.welcome h2 {
+	margin-top: 10px;
+	text-align: center;
+	margin-left: 19%;
+	color: #475E65;
+}
+
+.logo img {
+	margin-top: -10px;
+	height: 11%;
+	width: 11%;
+	margin-left: 53.6%;
+	margin-bottom: 10px;
+}
+
+.smkn h4 {
+	font-size: 22px;
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	margin-left: 18.5%;
+	margin-top: -10px;
+	color: #475E65;
+}
+
+.profil p {
+	text-align: center;
+	margin-top: 10px;
+	line-height: 7px;
+	margin-left: 18.5%;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 15px;
+	color: #475E65;
+}
+
+footer {
+	margin-top: -9px;
+	margin-left: 18%;
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: grey;
+    height: 14.3vh;
+    width: 82.5%;
+    color: white;
+}
+
+
+
+/*halaman pendaftaran*/
+.formulir h1 {
+	border-bottom: 1px solid #7f8c8d;
+	padding: 13px 0;
+	margin-left: 24%;
+	font-size: 25px;
+	color: grey;
+}
+
+.utama h2 {
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.form label {
+	margin-left: 24%;
+	display: block;
+	font-size: 15px;
+}
+
+.form input {
+	margin-left: 24%;
+}
+
+.pendukung h2 {
+	margin-top: 20px;
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+/*halaman kriteria*/
+.kriteria h1 {
+	border-bottom: 1px solid #7f8c8d;
+	padding: 13px 0;
+	margin-left: 24%;
+	font-size: 25px;
+	color: grey;
+}
+
+/*tambah kriteria*/
+.tambah_kriteria a {
+	margin-left: 25%;
+	text-decoration: none;
+	padding: 5px;
+	background: #89B5C8;
+	border-radius: 5px;
+	color: white;
+}
+
+.tambah_kriteria a:hover {
+	background: #4594B8;
+	transition: 0.3s;
+	transition-property: background;
+}
+
+/*halaman subkriteria*/
+.subkriteria h1 {
+	border-bottom: 1px solid #7f8c8d;
+	padding: 13px 0;
+	margin-left: 24%;
+	font-size: 25px;
+	color: grey;
+}
+
+/*tambah subkriteria*/
+.tambah_subkriteria a {
+	margin-left: 25%;
+	text-decoration: none;
+	padding: 5px;
+	background: #89B5C8;
+	border-radius: 5px;
+	color: white;
+}
+
+.tambah_subkriteria a:hover {
+	background: #4594B8;
+	transition: 0.3s;
+	transition-property: background;
+}
+
+/*halaman siswa*/
+.siswa h1 {
+	border-bottom: 1px solid #7f8c8d;
+	padding: 13px 0;
+	margin-left: 24%;
+	font-size: 25px;
+	color: grey;
+}
+
+/*tambah siswa*/
+.tambah_siswa a {
+	margin-left: 25%;
+	text-decoration: none;
+	padding: 5px;
+	background: #89B5C8;
+	border-radius: 5px;
+	color: white;
+}
+
+.tambah_siswa a:hover {
+	background: #4594B8;
+	transition: 0.3s;
+	transition-property: background;
+}
+
+/*halaman perangkingan*/
+.perangkingan h1 {
+	border-bottom: 1px solid #7f8c8d;
+	padding: 13px 0;
+	margin-left: 24%;
+	font-size: 25px;
+	color: grey;
+}
