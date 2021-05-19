@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2021 at 12:23 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: May 19, 2021 at 09:54 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -108,8 +107,37 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id_user`, `nama_user`, `username`, `password`, `level`) VALUES
-(1, 'dhienny', 'dam123', '130799', 'admin'),
-(2, 'dharvyn', 'dharvyn18', '181105', 'user');
+(1, 'dhienny', 'dam123', 'admin', 'admin'),
+(2, 'dharvyn', 'dharvyn18', 'user', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rank`
+--
+
+CREATE TABLE `rank` (
+  `id_rank` int(11) NOT NULL,
+  `nik` varchar(16) CHARACTER SET latin1 NOT NULL,
+  `penghasilan` double(7,2) NOT NULL,
+  `kepemilikan` double(7,2) NOT NULL,
+  `kondisi` double(7,2) NOT NULL,
+  `anggota` double(7,2) NOT NULL,
+  `kendaraan` double(7,2) NOT NULL,
+  `kebutuhan` double(7,2) NOT NULL,
+  `pembayaran` double(7,2) NOT NULL,
+  `jarak` double(7,2) NOT NULL,
+  `total` double(7,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rank`
+--
+
+INSERT INTO `rank` (`id_rank`, `nik`, `penghasilan`, `kepemilikan`, `kondisi`, `anggota`, `kendaraan`, `kebutuhan`, `pembayaran`, `jarak`, `total`) VALUES
+(15, '3275050710980009', 9.12, 13.33, 10.00, 7.67, 4.56, 3.80, 5.73, 1.90, 56.11),
+(16, '3172021307990011', 9.12, 6.67, 10.00, 7.67, 0.00, 3.80, 8.60, 5.70, 51.55),
+(17, '3172021811050007', 18.24, 20.00, 20.00, 0.00, 4.56, 3.80, 8.60, 1.90, 77.10);
 
 -- --------------------------------------------------------
 
@@ -122,14 +150,14 @@ CREATE TABLE `siswa` (
   `nik` varchar(16) NOT NULL,
   `nama_lengkap` varchar(100) NOT NULL,
   `jenis_kelamin` varchar(10) NOT NULL,
-  `penghasilan` varchar(3) NOT NULL,
-  `kepemilikan` varchar(3) NOT NULL,
-  `kondisi` varchar(3) NOT NULL,
-  `anggota` varchar(3) NOT NULL,
-  `kendaraan` varchar(3) NOT NULL,
-  `kebutuhan` varchar(3) NOT NULL,
-  `pembayaran` varchar(3) NOT NULL,
-  `jarak` varchar(3) NOT NULL
+  `penghasilan` double(7,2) NOT NULL,
+  `kepemilikan` double(7,2) NOT NULL,
+  `kondisi` double(7,2) NOT NULL,
+  `anggota` double(7,2) NOT NULL,
+  `kendaraan` double(7,2) NOT NULL,
+  `kebutuhan` double(7,2) NOT NULL,
+  `pembayaran` double(7,2) NOT NULL,
+  `jarak` double(7,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -137,8 +165,9 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id_siswa`, `nik`, `nama_lengkap`, `jenis_kelamin`, `penghasilan`, `kepemilikan`, `kondisi`, `anggota`, `kendaraan`, `kebutuhan`, `pembayaran`, `jarak`) VALUES
-(2, '3172021307990011', 'Dwinop', 'perempuan', '100', '100', '100', '100', '100', '100', '100', '100'),
-(3, '3172021811050007', 'Dharvyn Aliyya Miro', 'laki-laki', '75', '50', '100', '100', '100', '100', '100', '100');
+(15, '3275050710980009', 'Muhammad Fiqri Alfayed', 'laki-laki', 40.00, 75.00, 60.00, 75.00, 80.00, 75.00, 75.00, 60.00),
+(16, '3172021307990011', 'Dwinop', 'laki-laki', 40.00, 50.00, 60.00, 75.00, 0.00, 75.00, 100.00, 100.00),
+(17, '3172021811050007', 'Dharvyn Aliyya Miro', 'laki-laki', 80.00, 100.00, 100.00, 25.00, 80.00, 75.00, 100.00, 60.00);
 
 -- --------------------------------------------------------
 
@@ -159,37 +188,37 @@ CREATE TABLE `subkriteria` (
 --
 
 INSERT INTO `subkriteria` (`id_subkriteria`, `id_kriteria`, `nama_kriteria`, `nama_subkriteria`, `bobot_subkriteria`) VALUES
-(1, 0, 'Penghasilan Orang Tua', '< Rp.1.500.000', '100'),
-(2, 0, 'Penghasilan Orang Tua', 'Rp.1.500.000 - Rp.3.000.000', '80'),
-(3, 0, 'Penghasilan Orang Tua', 'Rp.3.000.001 - Rp.4.500.000', '40'),
-(4, 0, 'Penghasilan Orang Tua', 'Rp.4.500.001 - Rp.5.500.000', '20'),
-(5, 0, 'Penghasilan Orang Tua', '> Rp.5.500.000', '0'),
-(6, 0, 'Kepemilikan Tempat Tinggal', 'Kontrak', '100'),
-(7, 0, 'Kepemilikan Tempat Tinggal', 'Bukan Milik Sendiri', '75'),
-(8, 0, 'Kepemilikan Tempat Tinggal', 'Milik Keluarga Besar', '50'),
-(9, 0, 'Kepemilikan Tempat Tinggal', 'Milik Sendiri', '25'),
-(10, 0, 'Kondisi Tempat Tinggal', 'Non Permanen', '100'),
-(11, 0, 'Kondisi Tempat Tinggal', 'Semi Permanen', '60'),
-(12, 0, 'Kondisi Tempat Tinggal', 'Permanen', '20'),
-(13, 0, 'Anggota Keluarga Ditanggung', '> 5', '100'),
-(14, 0, 'Anggota Keluarga Ditanggung', '5', '75'),
-(15, 0, 'Anggota Keluarga Ditanggung', '4', '50'),
-(16, 0, 'Anggota Keluarga Ditanggung', '3', '25'),
-(17, 0, 'Kepemilikan Kendaraan', 'Tidak Punya', '100'),
-(18, 0, 'Kepemilikan Kendaraan', 'Sepeda', '80'),
-(19, 0, 'Kepemilikan Kendaraan', 'Motor', '40'),
-(20, 0, 'Kepemilikan Kendaraan', 'Motor > 1', '0'),
-(21, 0, 'Kebutuhan Pokok', 'Rp.10.000 - Rp.25.000', '100'),
-(22, 0, 'Kebutuhan Pokok', 'Rp.25.001 - Rp.40.000', '75'),
-(23, 0, 'Kebutuhan Pokok', 'Rp.40.001 - Rp.55.000', '50'),
-(24, 0, 'Kebutuhan Pokok', '> Rp.55.000', '25'),
-(25, 0, 'Pembayaran Listrik & PDAM', '< Rp.100.000', '100'),
-(26, 0, 'Pembayaran Listrik & PDAM', 'Rp.100.000 - Rp.200.000', '75'),
-(27, 0, 'Pembayaran Listrik & PDAM', 'Rp.200.001 - Rp.300.000', '50'),
-(28, 0, 'Pembayaran Listrik & PDAM', '> Rp.300.000', '25'),
-(29, 0, 'Jarak Rumah Ke Sekolah', '> 2 KM', '100'),
-(30, 0, 'Jarak Rumah Ke Sekolah', '1  - 2 KM', '60'),
-(31, 0, 'Jarak Rumah Ke Sekolah', '< 1 KM', '40');
+(1, 14, 'Penghasilan Orang Tua', '< Rp.1.500.000', '100'),
+(2, 14, 'Penghasilan Orang Tua', 'Rp.1.500.000 - Rp.3.000.000', '80'),
+(3, 14, 'Penghasilan Orang Tua', 'Rp.3.000.001 - Rp.4.500.000', '40'),
+(4, 14, 'Penghasilan Orang Tua', 'Rp.4.500.001 - Rp.5.500.000', '20'),
+(5, 14, 'Penghasilan Orang Tua', '> Rp.5.500.000', '0'),
+(6, 15, 'Kepemilikan Tempat Tinggal', 'Kontrak', '100'),
+(7, 15, 'Kepemilikan Tempat Tinggal', 'Bukan Milik Sendiri', '75'),
+(8, 15, 'Kepemilikan Tempat Tinggal', 'Milik Keluarga Besar', '50'),
+(9, 15, 'Kepemilikan Tempat Tinggal', 'Milik Sendiri', '25'),
+(10, 16, 'Kondisi Tempat Tinggal', 'Non Permanen', '100'),
+(11, 16, 'Kondisi Tempat Tinggal', 'Semi Permanen', '60'),
+(12, 16, 'Kondisi Tempat Tinggal', 'Permanen', '20'),
+(13, 17, 'Anggota Keluarga Ditanggung', '> 5', '100'),
+(14, 17, 'Anggota Keluarga Ditanggung', '5', '75'),
+(15, 17, 'Anggota Keluarga Ditanggung', '4', '50'),
+(16, 17, 'Anggota Keluarga Ditanggung', '3', '25'),
+(17, 18, 'Kepemilikan Kendaraan', 'Tidak Punya', '100'),
+(18, 18, 'Kepemilikan Kendaraan', 'Sepeda', '80'),
+(19, 18, 'Kepemilikan Kendaraan', 'Motor', '40'),
+(20, 18, 'Kepemilikan Kendaraan', 'Motor > 1', '0'),
+(21, 19, 'Kebutuhan Pokok', 'Rp.10.000 - Rp.25.000', '100'),
+(22, 19, 'Kebutuhan Pokok', 'Rp.25.001 - Rp.40.000', '75'),
+(23, 19, 'Kebutuhan Pokok', 'Rp.40.001 - Rp.55.000', '50'),
+(24, 19, 'Kebutuhan Pokok', '> Rp.55.000', '25'),
+(25, 20, 'Pembayaran Listrik & PDAM', '< Rp.100.000', '100'),
+(26, 20, 'Pembayaran Listrik & PDAM', 'Rp.100.000 - Rp.200.000', '75'),
+(27, 20, 'Pembayaran Listrik & PDAM', 'Rp.200.001 - Rp.300.000', '50'),
+(28, 20, 'Pembayaran Listrik & PDAM', '> Rp.300.000', '25'),
+(29, 21, 'Jarak Rumah Ke Sekolah', '> 2 KM', '100'),
+(30, 21, 'Jarak Rumah Ke Sekolah', '1  - 2 KM', '60'),
+(31, 21, 'Jarak Rumah Ke Sekolah', '< 1 KM', '40');
 
 --
 -- Indexes for dumped tables
@@ -212,6 +241,12 @@ ALTER TABLE `kriteria`
 --
 ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_user`);
+
+--
+-- Indexes for table `rank`
+--
+ALTER TABLE `rank`
+  ADD PRIMARY KEY (`id_rank`);
 
 --
 -- Indexes for table `siswa`
@@ -249,16 +284,22 @@ ALTER TABLE `pengguna`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `rank`
+--
+ALTER TABLE `rank`
+  MODIFY `id_rank` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `subkriteria`
 --
 ALTER TABLE `subkriteria`
-  MODIFY `id_subkriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_subkriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
