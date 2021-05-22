@@ -1,4 +1,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <br><br><br>
 <div class="formulir">
@@ -102,11 +104,11 @@
 			<td>
 				<select name="penghasilan">
 					<option>--Pilih Penghasilan--</option>
-					<option>< Rp1.500.000</option>
-					<option> Rp1.500.000 - Rp3.000.000</option>
-					<option>Rp3.000.001 - Rp4.500.000</option>
-					<option>Rp4.500.001 - Rp5.500.000</option>
-					<option>> Rp5.500.000</option>
+					<option value="100">< Rp.1.500.000</option>
+					<option value="80">Rp.1.500.000 – Rp.3.000.000</option>
+					<option value="40">Rp.3.000.001 – Rp.4.500.000</option>
+					<option value="20">Rp.4.500.001 – Rp.5.500.000</option>
+					<option value="0">> Rp.5.500.000</option>
 				</select>
 			</td>
 		</tr>
@@ -116,10 +118,10 @@
 			<td>
 				<select name="kepemilikan">
 					<option>--Tempat Tinggal--</option>
-					<option>Kontrak</option>
-					<option>Bukan Milik Sendiri</option>
-					<option>Milik Keluarga Besar</option>
-					<option>Milik Sendiri</option>
+					<option value="100">Kontrak</option>
+					<option value="75">Bukan Milik Sendiri</option>
+					<option value="50">Milik Keluarga Besar</option>
+					<option value="25">Milik Sendiri</option>
 				</select>
 			</td>
 		</tr>
@@ -129,9 +131,9 @@
 			<td>
 				<select name="kondisi">
 					<option>--Kondisi Tempat Tinggal--</option>
-					<option>Non Permanent</option>
-					<option>Semi Permanent</option>
-					<option>Permanent</option>
+					<option value="100">Non Permanent</option>
+					<option value="60">Semi Permanent</option>
+					<option value="20">Permanent</option>
 				</select>
 			</td>
 		</tr>
@@ -141,10 +143,10 @@
 			<td>
 				<select name="anggota">
 					<option>--Anggota Ditanggung--</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>> 5</option>
+					<option value="100">> 5</option>
+					<option value="75">5</option>
+					<option value="50">4</option>
+					<option value="25">3</option>
 				</select>
 			</td>
 		</tr>
@@ -154,10 +156,10 @@
 			<td>
 				<select name="kendaraan">
 					<option>--Kendaraan--</option>
-					<option>Tidak Punya</option>
-					<option>Sepeda</option>
-					<option>Motor</option>
-					<option>Motor >1</option>
+					<option value="100">Tidak Punya</option>
+					<option value="80">Sepeda</option>
+					<option value="40">Motor</option>
+					<option value="0">Motor>1</option>
 				</select>
 			</td>
 		</tr>
@@ -167,10 +169,10 @@
 			<td>
 				<select name="kebutuhan">
 					<option>--Kebutuhan Pokok--</option>
-					<option>Rp10.000 - Rp25.000</option>
-					<option>Rp25.001 - Rp40.000</option>
-					<option>Rp40.001 - Rp55.000</option>
-					<option>> Rp55.000</option>
+					<option value="100">Rp.10.000 – Rp.25.000</option>
+					<option value="75">Rp.25.001 – Rp.40.000</option>
+					<option value="50">Rp.40.001 – Rp.55.000</option>
+					<option value="25">> Rp.55.000</option>
 				</select>
 			</td>
 		</tr>
@@ -180,10 +182,10 @@
 			<td>
 				<select name="pembayaran">
 					<option>--Pembayaran--</option>
-					<option>< Rp100.000</option>
-					<option>Rp100.000 - Rp200.000</option>
-					<option>Rp200.001 - Rp300.000</option>
-					<option>> Rp300.000</option>
+					<option value="100">< Rp.100.000</option>
+					<option value="75">Rp.100.000 – Rp.200.000</option>
+					<option value="50">Rp.200.001 – Rp.300.000</option>
+					<option value="25">>Rp.300.000</option>
 				</select>
 			</td>
 		</tr>
@@ -193,9 +195,9 @@
 			<td>
 				<select name="jarak">
 					<option>--Jarak Rumah--</option>
-					<option>< 1KM</option>
-					<option>1 - 2KM</option>
-					<option>> 2KM</option>
+					<option value="100">> 2 km</option>
+					<option value="60">1 km – 2 km</option>
+					<option value="40">< 1 km</option>
 				</select>
 			</td>
 		</tr>		
@@ -249,21 +251,85 @@ include ('koneksi.php');
 		$kebutuhan = $_POST['kebutuhan'];
 		$pembayaran = $_POST['pembayaran'];
 		$jarak = $_POST['jarak'];
-		$permohonan = $_FILES['permohonan']['name'];
-		$kk = $_FILES['kk']['name'];
-		$sktm = $_FILES['sktm']['name'];
-		$tempat_tinggal = $_FILES['tempat_tinggal']['name'];
 
-		$kirim = "INSERT INTO form_pendaftaran (nik, nama_lengkap, jenis_kelamin, alamat, penghasilan, kepemilikan, kondisi, anggota, kendaraan,kebutuhan, pembayaran, jarak) VALUES ('$nik','$nama_lengkap','$jenis_kelamin','$alamat','$penghasilan','$kepemilikan','$kondisi','$anggota','$kendaraan','$kebutuhan','$pembayaran','$jarak')"; 
-		$result = mysqli_query($koneksi, $kirim);
+		$nama_permohonan = time().'_'.rand(100, 999).'.'.end(explode(".",$_FILES['permohonan']['name']));
+		$tipe_permohonan = $_FILES['permohonan']['type'];
+        $uk_permohonan = $_FILES['permohonan']['size'];
+        $tmp_permohonan = $_FILES['permohonan']['tmp_name'];
+        $er_permohonan = $_FILES['permohonan']['error'];
+
+		$nama_kk = time().'_'.rand(100, 999).'.'.end(explode(".",$_FILES['kk']['name']));
+		$tipe_kk = $_FILES['kk']['type'];
+        $uk_kk = $_FILES['kk']['size'];
+        $tmp_kk = $_FILES['kk']['tmp_name'];
+        $er_kk = $_FILES['kk']['error'];
+
+		$nama_sktm = time().'_'.rand(100, 999).'.'.end(explode(".",$_FILES['sktm']['name']));
+		$tipe_sktm = $_FILES['sktm']['type'];
+        $uk_sktm = $_FILES['sktm']['size'];
+        $tmp_sktm = $_FILES['sktm']['tmp_name'];
+        $er_sktm = $_FILES['sktm']['error'];
+
+		$nama_tempat_tinggal = time().'_'.rand(100, 999).'.'.end(explode(".",$_FILES['tempat_tinggal']['name']));
+		$tipe_tempat_tinggal = $_FILES['tempat_tinggal']['type'];
+        $uk_tempat_tinggal = $_FILES['tempat_tinggal']['size'];
+        $tmp_tempat_tinggal = $_FILES['tempat_tinggal']['tmp_name'];
+        $er_tempat_tinggal = $_FILES['tempat_tinggal']['error'];
+
+		$extensi = ['pdf'];
+        $ext_permohonan = pathinfo($nama_permohonan, PATHINFO_EXTENSION);
+        $ext_kk = pathinfo($nama_kk, PATHINFO_EXTENSION);
+        $ext_sktm = pathinfo($nama_sktm, PATHINFO_EXTENSION);
+        $ext_tempat_tinggal = pathinfo($nama_tempat_tinggal, PATHINFO_EXTENSION);
+        $lokasi = "dokumen/";
+        $save = "dokumen/";
+
+		// if($er_permohonan === 4) {
+        //     header("location:user.php?page=pendaftaran&stat=input_null");
+        // } elseif(!in_array($ext_permohonan, $extensi)) {
+        //     header("location:user.php?page=pendaftaran&stat=file_ext");
+        // } else {
+        //     if($uk_permohonan < 5000000){
+        //         move_uploaded_file($tmp_permohonan, $lokasi.$nama_permohonan);
+        //         move_uploaded_file($tmp_kk, $lokasi.$nama_kk);
+        //         move_uploaded_file($tmp_sktm, $lokasi.$nama_sktm);
+        //         move_uploaded_file($tmp_tempat_tinggal, $lokasi.$nama_tempat_tinggal);
+        //         $kirim = "INSERT INTO siswa (nik, nama_lengkap, jenis_kelamin, penghasilan, kepemilikan, kondisi, anggota, kendaraan,kebutuhan, pembayaran, jarak, alamat, file_permohonan, file_kk, file_sktm, file_tinggal) VALUES ('$nik','$nama_lengkap','$jenis_kelamin','$penghasilan','$kepemilikan','$kondisi','$anggota','$kendaraan','$kebutuhan','$pembayaran','$jarak','$alamat','$save$nama_permohonan','$save$nama_kk','$save$nama_sktm','$save$nama_tempat_tinggal')"; 
+		// 		$result = mysqli_query($koneksi, $kirim);
+        //         if($result){
+        //             header("location:user.php?page=pendaftaran&stat=input_success");
+        //         }else{
+        //             header("location:user.php?page=pendaftaran&stat=input_failed");
+        //         }
+        //     }else{
+        //         header("location:user.php?page=pendaftaran&stat=size_file_too_large");
+        //     }
+        // }
+
+		move_uploaded_file($tmp_permohonan, $lokasi.$nama_permohonan);
+		move_uploaded_file($tmp_kk, $lokasi.$nama_kk);
+		move_uploaded_file($tmp_sktm, $lokasi.$nama_sktm);
+		move_uploaded_file($tmp_tempat_tinggal, $lokasi.$nama_tempat_tinggal);
+
+		$rpenghasilan = (100*(((double)$penghasilan-0)/(100-0)))*0.228;
+		$rkepemilikan = (100*(((double)$kepemilikan-25)/(100-25)))*0.2;
+		$rkondisi = (100*(((double)$kondisi-20)/(100-20)))*0.2;
+		$ranggota = (100*(((double)$anggota-25)/(100-25)))*0.115;
+		$rkendaraan = (100*(((double)$kendaraan-0)/(100-0)))*0.057;
+		$rkebutuhan = (100*(((double)$kebutuhan-25)/(100-25)))*0.057;
+		$rpembayaran = (100*(((double)$pembayaran-25)/(100-25)))*0.086;
+		$rjarak = (100*(((double)$jarak-40)/(100-40)))*0.057;
+		$total = $rpenghasilan+$rkepemilikan+$rkondisi+$ranggota+$rkendaraan+$rkebutuhan+$rpembayaran+$rjarak;
+
+		$kirim = "INSERT INTO siswa (nik, nama_lengkap, jenis_kelamin, penghasilan, kepemilikan, kondisi, anggota, kendaraan,kebutuhan, pembayaran, jarak, alamat, file_permohonan, file_kk, file_sktm, file_tinggal) VALUES ('$nik','$nama_lengkap','$jenis_kelamin','$penghasilan','$kepemilikan','$kondisi','$anggota','$kendaraan','$kebutuhan','$pembayaran','$jarak','$alamat','$save$nama_permohonan','$save$nama_kk','$save$nama_sktm','$save$nama_tempat_tinggal'); 
+			INSERT INTO rank (nik, penghasilan, kepemilikan, kondisi, anggota, kendaraan, kebutuhan, pembayaran, jarak, total) VALUES ('$nik', '$rpenghasilan', '$rkepemilikan', '$rkondisi', '$ranggota', '$rkendaraan', '$rkebutuhan', '$rpembayaran', '$rjarak', '$total')";
+		$result = mysqli_multi_query($koneksi, $kirim);
 
 		if (!$result) {
 			die("Query Error : ".mysqli_errno($koneksi)." - ".mysqli_error($koneksi));
 		} else {
 			echo "<script>alert('Data Berhasil Disimpan!');window.location='user.php?page=pendaftaran'</script>";
 		}
-
-
 	}
 
 ?>

@@ -78,6 +78,7 @@
 			<div>
 				<label>Penghasilan Orang Tua</label>
 				<select name="penghasilan" required="">
+					<option>--Pilih Penghasilan--</option>
 					<option value="100">< Rp.1.500.000</option>
 					<option value="80">Rp.1.500.000 – Rp.3.000.000</option>
 					<option value="40">Rp.3.000.001 – Rp.4.500.000</option>
@@ -88,6 +89,7 @@
 			<div>
 				<label>Kepemilkan Tempat Tinggal</label>
 				<select name="kepemilikan" required="">
+					<option>--Tempat Tinggal--</option>
 					<option value="100">Kontrak</option>
 					<option value="75">Bukan Milik Sendiri</option>
 					<option value="50">Milik Keluarga Besar</option>
@@ -97,6 +99,7 @@
 			<div>
 				<label>Kondisi Tempat Tinggal</label>
 				<select name="kondisi" required="">
+					<option>--Kondisi Tempat Tinggal--</option>
 					<option value="100">Non Permanent</option>
 					<option value="60">Semi Permanent</option>
 					<option value="20">Permanent</option>
@@ -105,6 +108,7 @@
 			<div>
 				<label>Anggota Keluarga Ditanggung</label>
 				<select name="anggota" required="">
+					<option>--Anggota Ditanggung--</option>
 					<option value="100">> 5</option>
 					<option value="75">5</option>
 					<option value="50">4</option>
@@ -114,6 +118,7 @@
 			<div>
 				<label>Kepemilikan Kendaraan</label>
 				<select name="kendaraan" required="">
+					<option>--Kendaraan--</option>
 					<option value="100">Tidak Punya</option>
 					<option value="80">Sepeda</option>
 					<option value="40">Motor</option>
@@ -123,6 +128,7 @@
 			<div>
 				<label>Kebutuhan Pokok</label>
 				<select name="kebutuhan" required="">
+					<option>--Kebutuhan Pokok--</option>
 					<option value="100">Rp.10.000 – Rp.25.000</option>
 					<option value="75">Rp.25.001 – Rp.40.000</option>
 					<option value="50">Rp.40.001 – Rp.55.000</option>
@@ -132,6 +138,7 @@
 			<div>
 				<label>Pembayaran Listrik & PDAM</label>
 				<select name="pembayaran" required="">
+					<option>--Pembayaran--</option>
 					<option value="100">< Rp.100.000</option>
 					<option value="75">Rp.100.000 – Rp.200.000</option>
 					<option value="50">Rp.200.001 – Rp.300.000</option>
@@ -141,6 +148,7 @@
 			<div>
 				<label>Jarak Rumah Ke Sekolah</label>
 				<select name="jarak" required="">
+					<option>--Jarak Rumah--</option>
 					<option value="100">> 2 km</option>
 					<option value="60">1 km – 2 km</option>
 					<option value="40">< 1 km</option>

@@ -7,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+SC:wght@100&family=Pacifico&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style type="text/css">
 		<style type="text/css">
 		body {
@@ -46,7 +46,6 @@
 		.right_area:hover {
 			background: #4594B8;
 			transition: 0.3s;
-			transition-property: background;
 		}
 
 		.sidebar {
@@ -71,7 +70,6 @@
 			padding-left: 40px;
 			box-sizing: border-box;
 			transition: 0.3s;
-			transition-property: background;
 		}
 
 		.sidebar a:hover {
