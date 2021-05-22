@@ -55,6 +55,7 @@ include 'koneksi.php';
 			<th>NIK</th>
 			<th>Nama Lengkap</th>
 			<th>Skor</th>
+			<th>Keterangan</th>
             <th>Action</th>
 		</tr>
 	</thead>
@@ -76,6 +77,13 @@ include 'koneksi.php';
 			<td><?php echo $row['nik'] ?></td>
 			<td><?php echo $row['nama_lengkap'] ?></td>
 			<td><?php echo $row['total'] ?></td>
+			<td><?php if($row['total'] <= 50) { 
+				echo 'Tidak dapat'; 
+			} elseif ($row['total'] > 50 && $row['total'] <= 70) {
+				echo 'Dipertimbangkan';
+			} elseif ($row['total'] > 70) {
+				echo 'Dapat Beasiswa';
+			} ?></td>
 			<td>
 				<div class="action_ranking">
 					<a href="detail_rank.php?id_rank=<?php echo $row['id_rank']; ?>">Detail</a>

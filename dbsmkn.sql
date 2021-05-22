@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 09:54 PM
+-- Generation Time: May 22, 2021 at 03:26 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -137,7 +137,10 @@ CREATE TABLE `rank` (
 INSERT INTO `rank` (`id_rank`, `nik`, `penghasilan`, `kepemilikan`, `kondisi`, `anggota`, `kendaraan`, `kebutuhan`, `pembayaran`, `jarak`, `total`) VALUES
 (15, '3275050710980009', 9.12, 13.33, 10.00, 7.67, 4.56, 3.80, 5.73, 1.90, 56.11),
 (16, '3172021307990011', 9.12, 6.67, 10.00, 7.67, 0.00, 3.80, 8.60, 5.70, 51.55),
-(17, '3172021811050007', 18.24, 20.00, 20.00, 0.00, 4.56, 3.80, 8.60, 1.90, 77.10);
+(17, '3172021811050007', 18.24, 20.00, 20.00, 0.00, 4.56, 3.80, 8.60, 1.90, 77.10),
+(18, '32750511029911', 9.12, 13.33, 20.00, 11.50, 2.28, 3.80, 5.73, 5.70, 71.47),
+(19, '09101999', 18.24, 13.33, 10.00, 7.67, 2.28, 1.90, 2.87, 1.90, 58.19),
+(20, '6617', 0.00, 13.33, 20.00, 7.67, 5.70, 1.90, 5.73, 0.00, 54.33);
 
 -- --------------------------------------------------------
 
@@ -157,17 +160,25 @@ CREATE TABLE `siswa` (
   `kendaraan` double(7,2) NOT NULL,
   `kebutuhan` double(7,2) NOT NULL,
   `pembayaran` double(7,2) NOT NULL,
-  `jarak` double(7,2) NOT NULL
+  `jarak` double(7,2) NOT NULL,
+  `alamat` varchar(100) DEFAULT NULL,
+  `file_permohonan` varchar(255) DEFAULT NULL,
+  `file_kk` varchar(255) DEFAULT NULL,
+  `file_sktm` varchar(255) DEFAULT NULL,
+  `file_tinggal` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nik`, `nama_lengkap`, `jenis_kelamin`, `penghasilan`, `kepemilikan`, `kondisi`, `anggota`, `kendaraan`, `kebutuhan`, `pembayaran`, `jarak`) VALUES
-(15, '3275050710980009', 'Muhammad Fiqri Alfayed', 'laki-laki', 40.00, 75.00, 60.00, 75.00, 80.00, 75.00, 75.00, 60.00),
-(16, '3172021307990011', 'Dwinop', 'laki-laki', 40.00, 50.00, 60.00, 75.00, 0.00, 75.00, 100.00, 100.00),
-(17, '3172021811050007', 'Dharvyn Aliyya Miro', 'laki-laki', 80.00, 100.00, 100.00, 25.00, 80.00, 75.00, 100.00, 60.00);
+INSERT INTO `siswa` (`id_siswa`, `nik`, `nama_lengkap`, `jenis_kelamin`, `penghasilan`, `kepemilikan`, `kondisi`, `anggota`, `kendaraan`, `kebutuhan`, `pembayaran`, `jarak`, `alamat`, `file_permohonan`, `file_kk`, `file_sktm`, `file_tinggal`) VALUES
+(15, '3275050710980009', 'Muhammad Fiqri Alfayed', 'laki-laki', 40.00, 75.00, 60.00, 75.00, 80.00, 75.00, 75.00, 60.00, NULL, NULL, NULL, NULL, NULL),
+(16, '3172021307990011', 'Dwinop', 'laki-laki', 40.00, 50.00, 60.00, 75.00, 0.00, 75.00, 100.00, 100.00, NULL, NULL, NULL, NULL, NULL),
+(17, '3172021811050007', 'Dharvyn Aliyya Miro', 'laki-laki', 80.00, 100.00, 100.00, 25.00, 80.00, 75.00, 100.00, 60.00, NULL, NULL, NULL, NULL, NULL),
+(25, '32750511029911', 'Sipaling Cantik', 'perempuan', 40.00, 75.00, 100.00, 100.00, 40.00, 75.00, 75.00, 100.00, 'Bogor', 'dokumen/1621564151_235.pdf', 'dokumen/1621564151_891.pdf', 'dokumen/1621564151_538.pdf', 'dokumen/1621564151_333.pdf'),
+(26, '09101999', 'Siti Fatimah Cantik', 'perempuan', 80.00, 75.00, 60.00, 75.00, 40.00, 50.00, 50.00, 60.00, 'Bogor', 'dokumen/1621564305_383.pdf', 'dokumen/1621564305_615.pdf', 'dokumen/1621564305_991.pdf', 'dokumen/1621564305_323.pdf'),
+(27, '6617', 'DAM', 'laki-laki', 0.00, 75.00, 100.00, 75.00, 100.00, 50.00, 75.00, 40.00, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -287,13 +298,13 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `rank`
 --
 ALTER TABLE `rank`
-  MODIFY `id_rank` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_rank` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `subkriteria`
